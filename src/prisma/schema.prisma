@@ -1,0 +1,116 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Pairs {
+  Id        Int    @id @default(autoincrement())
+  Pair      String @unique
+  CreatedAt DateTime
+}
+
+model TickerPrice {
+  Id        Int    @id @default(autoincrement())
+  Pair      String
+  Price     Float
+  CreatedAt DateTime
+}
+
+// model btc_eur_trade {
+//   id        BigInt    @id @default(autoincrement())
+//   timestamp BigInt
+//   datetime DateTime
+//   high Float
+//   low Float
+//   bid Float
+//   bidVolume Float
+//   ask Float
+//   askVolume Float
+//   vwap Float
+//   open Float
+//   close Float
+//   last Float
+//   previousClose Float
+//   change Float
+//   percentage Float
+//   average Float
+//   baseVolume Float
+//   quoteVolume Float
+//   createdAt DateTime @default(now())
+// }
+
+// model doge_eur_trade {
+//   id        BigInt    @id @default(autoincrement())
+//   timestamp BigInt
+//   datetime DateTime
+//   high Float
+//   low Float
+//   bid Float
+//   bidVolume Float
+//   ask Float
+//   askVolume Float
+//   vwap Float
+//   open Float
+//   close Float
+//   last Float
+//   previousClose Float
+//   change Float
+//   percentage Float
+//   average Float
+//   baseVolume Float
+//   quoteVolume Float
+//   createdAt DateTime @default(now())
+// }
+
+// model shib_eur_trade {
+//   id        BigInt    @id @default(autoincrement())
+//   timestamp BigInt
+//   datetime DateTime
+//   high Float
+//   low Float
+//   bid Float
+//   bidVolume Float
+//   ask Float
+//   askVolume Float
+//   vwap Float
+//   open Float
+//   close Float
+//   last Float
+//   previousClose Float
+//   change Float
+//   percentage Float
+//   average Float
+//   baseVolume Float
+//   quoteVolume Float
+//   createdAt DateTime @default(now())
+// }
+
+// model waves_eur_trade {
+//   id        BigInt    @id @default(autoincrement())
+//   timestamp BigInt
+//   datetime DateTime
+//   high Float
+//   low Float
+//   bid Float
+//   bidVolume Float
+//   ask Float
+//   askVolume Float
+//   vwap Float
+//   open Float
+//   close Float
+//   last Float
+//   previousClose Float
+//   change Float
+//   percentage Float
+//   average Float
+//   baseVolume Float
+//   quoteVolume Float
+//   createdAt DateTime @default(now())
+// }
